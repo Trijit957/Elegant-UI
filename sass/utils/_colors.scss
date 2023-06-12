@@ -1,0 +1,22 @@
+@use '../base/color-variables' as colorVariables;
+
+@each $eachColor, $eachColorValue in colorVariables.$colors {
+    @each $key , $value in $eachColorValue {
+      .#{$eachColor}{
+        background-color: map-get($eachColorValue, 'default');
+      }
+      .text-#{$eachColor}{
+        color: map-get($eachColorValue, 'default');
+      }
+      @if $key != "default"{
+        .#{$eachColor}-#{$key}{
+          background-color: map-get($eachColorValue, #{$key});
+        }
+
+        .text-#{$eachColor}-#{$key}{
+          color: map-get($eachColorValue, #{$key});
+        }
+      }
+   
+    }
+  }
