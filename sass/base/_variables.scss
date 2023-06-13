@@ -11,11 +11,11 @@ $font-sizes: (
 
 // breakpoints
 $breakpoints: (
-    'xs': 0,
-    'sm': 768px,
-    'md': 1024px,
-    'lg': 1216px,
-    'xl': 1400px
+    'mobile': 0,
+    'tablet': 768px,
+    'desktop': 1024px,
+    'wide-screen': 1216px,
+    'extra-wide-screen': 1400px
 )
 
 
