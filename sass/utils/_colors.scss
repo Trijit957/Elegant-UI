@@ -1,6 +1,6 @@
-@use '../base/color-variables' as colorVariables;
+// @use '../base/color-variables' as colorVariables;
 
-@each $eachColor, $eachColorValue in colorVariables.$colors {
+@each $eachColor, $eachColorValue in $colors {
     @each $key , $value in $eachColorValue {
       .#{$eachColor}{
         background-color: map-get($eachColorValue, 'default');
