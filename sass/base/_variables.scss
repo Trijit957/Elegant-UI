@@ -16,6 +16,32 @@ $breakpoints: (
     'desktop': 1024px,
     'wide-screen': 1216px,
     'extra-wide-screen': 1400px
-)
+);
+
+// font-family
 
 
+
+$font-families: (
+    'georgia-serif' : 'Georgia, serif',
+    'gill-sans-serif' :  'Gill Sans", sans-serif',
+    'sans-serif' : 'sans-serif',
+    'serif': 'serif', 
+    'cursive' : 'cursive',
+    'system-ui' : 'system-ui'
+);
+
+//Normal font weight. Same as 400.
+//Bold font weight. Same as 700.
+$font-weights: (
+    '1': 100,
+    '2': 200,
+    '3': 300,
+    '4': 400,
+    '5': 500,
+    '6': 600,
+    '7': 700,
+    '8': 800,
+    '9': 900,
+
+);
