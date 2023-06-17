@@ -1,0 +1,31 @@
+// Variables
+$banner-bg-color: #f2f2f2;
+$banner-padding: 20px;
+$banner-button-padding: 10px 20px;
+$banner-button-bg-color: #007bff;
+$banner-button-color: #fff;
+$banner-button-hover-bg-color: #0056b3;
+$banner-border-radius: 4px;
+$banner-margin:10px;
+
+// Banner Styles
+.banner {
+  
+  background-color: $banner-bg-color;
+  padding: $banner-padding;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc; 
+  margin:$banner-margin;
+
+  .banner-title {
+    margin-bottom: 10px;
+  }
+
+  .banner-description {
+    margin-bottom: 20px;
+  }
+
+}
+
+
+    
