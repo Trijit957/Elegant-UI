@@ -1,0 +1,47 @@
+
+// Variables
+$alert-padding: 1rem;
+$alert-border-radius: 4px;
+$alert-success-bg: #28a745;
+$alert-success-color: #fff;
+$alert-error-bg: #dc3545;
+$alert-error-color: #fff;
+$alert-warning-bg: #ffc107;
+$alert-warning-color: #000;
+$alert-close-size: 20px;
+$alert-close-color: #000;
+$alert-box-margin:10px;
+// Mixins
+@mixin alert-box($bg-color, $color) {
+    position: relative;
+    background-color: $bg-color;
+    color: $color;
+    padding: $alert-padding;
+    border-radius: $alert-border-radius;
+    margin:$alert-box-margin;
+
+  .alert-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: $alert-close-size;
+    height: $alert-close-size;
+    color: $alert-close-color;
+    cursor: pointer;
+  }
+}
+
+// Alert Box Styles
+.alert {
+  &.success {
+    @include alert-box($alert-success-bg, $alert-success-color);
+  }
+
+  &.error {
+    @include alert-box($alert-error-bg, $alert-error-color);
+  }
+
+  &.warning {
+    @include alert-box($alert-warning-bg, $alert-warning-color);
+  }
+}

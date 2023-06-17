@@ -1,0 +1,28 @@
+$badge-warning-bg:#FDF6B2;
+$badge-padding:10px;
+$badge-border-radius: 6px;
+$badge-margin:5px;
+$badge-padding-top: 2px;
+$badge-padding-left: 10px;
+
+:root {
+  --badge-border-color-secondary: #28a745;
+}
+.badge {
+  position: relative;
+  display: inline-block;
+  padding: $badge-padding-top $badge-padding-left;
+  border-radius: $badge-border-radius;
+  margin:$badge-margin;
+
+  .badge-close {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    cursor: pointer;
+  }
+}
+
+.badge-secondary-outline {
+  border: 1px solid var(--badge-border-color-secondary);
+}
