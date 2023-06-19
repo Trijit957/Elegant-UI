@@ -19,9 +19,6 @@ $breakpoints: (
 );
 
 // font-family
-
-
-
 $font-families: (
     'georgia-serif' : 'Georgia, serif',
     'gill-sans-serif' :  'Gill Sans", sans-serif',
@@ -42,6 +39,13 @@ $font-weights: (
     '6': 600,
     '7': 700,
     '8': 800,
-    '9': 900,
-
+    '9': 900
 );
+
+//container
+$container-max-width: 1280px;
+$container-padding: 5px 10px;
+
+//grid system
+$grid-columns: 12;
+

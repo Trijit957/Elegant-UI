@@ -1,5 +1,29 @@
 @mixin mobile {
-    @media (min-width: map-get($breakpoints, 'mobile')) {
+    @media only screen and (min-width: map-get($breakpoints, 'mobile')) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: map-get($breakpoints, 'tablet')) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: map-get($breakpoints, 'desktop')) {
+        @content;
+    }
+}
+
+@mixin wide-screen {
+    @media (min-width: map-get($breakpoints, 'wide-screen')) {
+        @content;
+    }
+}
+
+@mixin extra-wide-screen {
+    @media (min-width: map-get($breakpoints, 'extra-wide-screen')) {
         @content;
     }
 }
