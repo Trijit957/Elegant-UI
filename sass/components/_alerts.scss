@@ -11,6 +11,7 @@ $alert-warning-color: #000;
 $alert-close-size: 20px;
 $alert-close-color: #000;
 $alert-box-margin:10px;
+
 // Mixins
 @mixin alert-box($bg-color, $color) {
     position: relative;
