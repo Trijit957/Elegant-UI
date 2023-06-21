@@ -1,0 +1,34 @@
+
+
+// Button component
+$btn-padding-y: 8px;
+$btn-padding-x: 16px;
+$btn-border-radius: 4px;
+$btn-font-size: 14px;
+$btn-icon-spacing: 8px;
+$btn-lg-padding-y: 12px;
+$btn-lg-padding-x: 24px;
+$btn-lg-font-size: 18px;
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: $btn-padding-y $btn-padding-x;
+    border: none;
+    border-radius: $btn-border-radius;
+    font-size: $btn-font-size;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+
+  .btn-primary {
+  background-color: #2962FF;
+  color: #fff;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
