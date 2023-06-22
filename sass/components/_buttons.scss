@@ -10,25 +10,111 @@ $btn-lg-padding-y: 12px;
 $btn-lg-padding-x: 24px;
 $btn-lg-font-size: 18px;
 
-.btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    padding: $btn-padding-y $btn-padding-x;
-    border: none;
-    border-radius: $btn-border-radius;
-    font-size: $btn-font-size;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
+//Button size 
+$medium-btn-padding-x:20px;
+$medium-btn-padding-y:10px;
+$large-btn-padding-x:23px;
+$large-btn-padding-y:13px;
+// Button variance
+$buttonNames: (
+  "primary": (
+    "background": map-get($blue, 'harden-2'),
+    "color": #FFFFFF,
+    "hoverColor": map-get($blue, 'harden-3'),
+    "activeColor": map-get($blue, 'soften-3')
+  ),
+  "secondary": (
+    "background": map-get($blue, 'harden-2'),
+    "color": #FFFFFF,
+    "hoverColor": map-get($blue, 'harden-3'),
+    "activeColor": map-get($blue, 'soften-3')
+  ),
+  "success": (
+    "background": map-get($green, 'harden-2'),
+    "color": #FFFFFF,
+    "hoverColor": map-get($green, 'harden-3'),
+    "activeColor": map-get($green, 'soften-3')
+  ),
+  "danger": (
+    "background": map-get($elegant-red, 'harden-2'),
+    "color": #FFFFFF,
+    "hoverColor": map-get($elegant-red, 'harden-3'),
+    "activeColor": map-get($elegant-red, 'soften-3')
+  ),
+  "warning": (
+    "background": map-get($yellow, 'harden-2'),
+    "color": #FFFFFF,
+    "hoverColor": map-get($yellow, 'harden-3'),
+    "activeColor": map-get($yellow, 'soften-3')
+  ),
+);
 
-  .btn-primary {
-  background-color: #2962FF;
-  color: #fff;
-
-  &:hover {
-    background-color: #0056b3;
-  }
+.btn{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: $btn-padding-y $btn-padding-x;
+  border: none;
+  border-radius: $btn-border-radius;
+  font-size: $btn-font-size;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
+
+@mixin button-style($backgroundColor, $color,$activeColor, $hover-color,  $outline:false  ,$border-radius: 4px, $buttonSize:'', $btn-padding-y : 5px, $btn-padding-x:10px ) {
+      padding: $btn-padding-y $btn-padding-x;
+      border-radius: $border-radius;
+      cursor: pointer;
+      border: none;
+      @if $outline {
+        background-color: transparent;
+        border: 1px solid $backgroundColor;
+        color: $color;
+      } @else {
+        background-color: $backgroundColor;
+        color: $color;
+        &:hover {
+          background-color: $hover-color;
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); 
+        }
+        &:active, &:focus {
+          background-color: $hover-color;
+          border: 4px solid $activeColor;
+
+      }
+    
+      }
+}
+
+@mixin button-size($btn-padding-y : 5px, $btn-padding-x:10px ) {
+  padding: $btn-padding-y $btn-padding-x;
+}
+
+@each $button, $buttonConfig in $buttonNames {
+  $backgroundColor: map-get($buttonConfig, 'background');
+  $color:map-get($buttonConfig, 'color');
+  $hoverColor:map-get($buttonConfig, 'hoverColor');
+  $activeColor:map-get($buttonConfig, 'activeColor');
+
+  @debug $activeColor;
+
+  .btn-#{$button}{
+    @include button-style($backgroundColor, $color, $activeColor,$hoverColor)
+  }
+  .btn-#{$button}-outline{
+    @include button-style($backgroundColor, #000, $activeColor,$hoverColor,true)
+  }
+  .btn-#{$button}-rounded{
+    @include button-style($backgroundColor, $color, $activeColor,$hoverColor,false, 50px)
+  }  
+}
+
+.btn-medium{
+  @include button-size($medium-btn-padding-y,$medium-btn-padding-y)
+}
+
+.btn-large{
+  @include button-size($large-btn-padding-y, $large-btn-padding-x)
+}  
+
